@@ -223,15 +223,38 @@ in `C:\tensorflow1\models\research\object_detection\generate_tfrecord.py`
 replace `[else: None]` by `[else: return 0]`
 
 
+if the error like this below comes during training section  replace the text in the config file as given below
+
+
+ error First step cannot be zero when running train.py #51 
 
 
 
+train_config: {
+  batch_size: 1
+  optimizer {
+    momentum_optimizer: {
+      learning_rate: {
+        manual_step_learning_rate {
+          initial_learning_rate: 0.0002
+          schedule {
+            step: 900000
+            learning_rate: .00002
+          }
+          schedule {
+            step: 1200000
+            learning_rate: .000002
+          }
+        }
+      }
+      momentum_optimizer_value: 0.9
+    }
+    use_moving_average: false
+  }
 
+for reference follow the link below
 
-
-
-
-
+https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/issues/51
 
 
 
