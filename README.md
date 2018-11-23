@@ -229,6 +229,9 @@ if the error like this below comes during training section  replace the text in 
  error First step cannot be zero when running train.py #51 
 
 
+### 5 - important error First step cannot be zero when running train.py #51 
+```
+if this error comes change the faster rcnn config file with these just search and change this
 
 train_config: {
   batch_size: 1
@@ -255,6 +258,4 @@ train_config: {
 for reference follow the link below
 
 https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10/issues/51
-
-
-
+```
